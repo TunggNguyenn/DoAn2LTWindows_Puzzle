@@ -713,7 +713,9 @@ namespace _1712872
                 //lay hinh
                 string img = lines[0];
                 ////set hinh
+                _imageURL = img;
                 _imgSource = new BitmapImage(new Uri(img, UriKind.RelativeOrAbsolute));
+
                 previewImg.Source = _imgSource;
 
                 //lay thoi gian
