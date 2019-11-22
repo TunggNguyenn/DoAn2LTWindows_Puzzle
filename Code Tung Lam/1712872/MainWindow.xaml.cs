@@ -329,6 +329,9 @@ namespace _1712872
             timeDis.Append(_clock / 60);
             timeDis.Append(" : ");
             timeDis.Append(_clock % 60);
+
+            checkGameStatus();
+
             recentTime = timeDis.ToString();
             UI_GameManagerComunicate.onEverySecond(recentTime);
         }
@@ -641,6 +644,9 @@ namespace _1712872
         {
             int picID = getPicIDFromCoordinateMouse((int)startMousePos.X, (int)startMousePos.Y);
 
+            if (picID == -1 || picID == _rows * _cols - 1)
+                return;
+
             Canvas.SetLeft(imgList[picID], lastMousePos.X - 75);
             Canvas.SetTop(imgList[picID], lastMousePos.Y - 75);
         }
@@ -651,7 +657,15 @@ namespace _1712872
             int originCol = getColFromCoordinateMouse((int)startMousePos.X);
             int originRow = getRowFromCoordinateMouse((int)startMousePos.Y);
 
+            if (originCol < 0 || originCol >= _cols || originRow < 0 || originRow >= _rows)
+                return;
+
             int picID = gameModel.model[originRow, originCol];
+
+            if (picID == -1 || picID == _rows * _cols - 1)
+                return;
+
+            
 
             int colIndex = getColFromCoordinateMouse((int)lastMousePos.X);
             int rowIndex = getRowFromCoordinateMouse((int)lastMousePos.Y);
