@@ -1,9 +1,9 @@
-﻿<Window x:Class="_1712872.MainWindow"
+﻿<Window x:Class="_1712867_1712872_1712884.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_1712872"
+        xmlns:local="clr-namespace:_1712867_1712872_1712884"
         mc:Ignorable="d"
         Title="Puzzle" Height="650" Width="1000" Loaded="Window_Loaded"
         KeyDown="Window_KeyDown">
@@ -31,8 +31,8 @@
                 <ComboBoxItem Name="mode3" Content="5x5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             </ComboBox>
         </Canvas>
-        <Canvas x:Name="gameScreen" Background="LightBlue" MouseMove="gameScreen_MouseMove" MouseLeftButtonDown="gameScreen_MouseLeftButtonDown" MouseLeftButtonUp="gameScreen_MouseLeftButtonUp" Grid.Column="0">
 
+        <Canvas x:Name="gameScreen" Background="LightBlue" MouseMove="gameScreen_MouseMove" MouseLeftButtonDown="gameScreen_MouseLeftButtonDown" MouseLeftButtonUp="gameScreen_MouseLeftButtonUp" Grid.Column="0">
         </Canvas>
     </Grid>
 </Window>

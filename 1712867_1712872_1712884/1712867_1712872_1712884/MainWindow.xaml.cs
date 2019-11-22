@@ -19,7 +19,7 @@ using System.Windows.Threading;
 using System.IO;
 using System.Diagnostics;
 
-namespace _1712872
+namespace _1712867_1712872_1712884
 {
 
     /// <summary>
@@ -78,7 +78,7 @@ namespace _1712872
             }
 
         }
-      
+
     }
 
     public class BlackBox // t khong biet dat ten la gi nua :)
@@ -92,8 +92,8 @@ namespace _1712872
         public int currentCol;
         public int rows;
         public int cols;
-       
-        public BlackBox(int rows,int cols)
+
+        public BlackBox(int rows, int cols)
         {
             this.rows = rows;
             this.cols = cols;
@@ -103,12 +103,12 @@ namespace _1712872
         {
             this.location = rows * cols - 1;
             this.picLeft = rows * cols - 2;
-            this.picUp = rows * cols - rows - 1; 
+            this.picUp = rows * cols - rows - 1;
 
             this.picRight = -1;
             this.picDown = -1;
 
-            this.currentCol = cols - 1; 
+            this.currentCol = cols - 1;
             this.currentRow = rows - 1;
         }
     }
@@ -118,28 +118,28 @@ namespace _1712872
     public class GameManager
     {
         //------------------------ VARIABLE AREA --------------------------
-        public  int _cols;
-        public  int _rows;
-        public  int _previewImgHeight = 200;
-        public  int _previewImgWidth = 200;
+        public int _cols;
+        public int _rows;
+        public int _previewImgHeight = 200;
+        public int _previewImgWidth = 200;
         private int _imgHeight = 60;
         private int _imgWidth = 60;
         private int _defautTopSpace = 30;
         private int _defaultLeftSpace = 30;
-        private  int _clock;
-        private  int _timeDelay = 60 * 10; // 10 minutes for 1 gamestatic 
+        private int _clock;
+        private int _timeDelay = 60 * 10; // 10 minutes for 1 gamestatic 
 
-        private DispatcherTimer _timeCounter=null;
+        private DispatcherTimer _timeCounter = null;
         private double _animationSpeed = 0.5;
-        private BitmapImage  _imgSource;
+        private BitmapImage _imgSource;
 
 
         public BlackBox emptyPiece = null;
         public GameModel gameModel = new GameModel();
         private List<Image> imgList = new List<Image>();
         private Image previewImg = new Image();
-        private  string _imageURL;
-        private  string recentTime;
+        private string _imageURL;
+        private string recentTime;
         //-------------------------- END VARIABLE AREA ---------------- 
 
         //-------------------------- SETUP GAME AREA ------------------
@@ -157,11 +157,11 @@ namespace _1712872
                     }
                     picID = gameModel.model[i, j];
                     Canvas.SetLeft(imgList[picID], _defaultLeftSpace + j * _imgWidth);
-                    Canvas.SetTop(imgList[picID], _defautTopSpace + i * _imgHeight);                  
+                    Canvas.SetTop(imgList[picID], _defautTopSpace + i * _imgHeight);
                 }
         }
 
-        public bool setupListImg(bool isLoadedGame=false)
+        public bool setupListImg(bool isLoadedGame = false)
         {
             if (pickApicture(isLoadedGame))
             {
@@ -174,10 +174,10 @@ namespace _1712872
                     {
                         if (i == _rows - 1 && j == _cols - 1)
                         {
-                            
+
                             continue;
                         }
-                        imgList[i * _cols + j].Source = cutImage(j * rectWidth, i * rectHeight, rectWidth, rectHeight);    
+                        imgList[i * _cols + j].Source = cutImage(j * rectWidth, i * rectHeight, rectWidth, rectHeight);
                         imgList[i * _cols + j].Stretch = Stretch.Fill; // very important, without it image dont fix with width and height
                     }
                 return true;
@@ -376,7 +376,7 @@ namespace _1712872
 
             //model update
             emptyPiece.picRight = emptyPiece.picLeft;
- 
+
 
             emptyPiece.location -= 1;
             emptyPiece.currentCol -= 1;
@@ -402,7 +402,7 @@ namespace _1712872
             if (isNeedUpdateUI)
                 UIAnimation(emptyPiece.picRight, _defaultLeftSpace + emptyPiece.currentCol * _imgWidth, _defaultLeftSpace + (emptyPiece.currentCol + 1) * _imgWidth, true, window);
 
-         
+
         }
 
         private void moveRight(FrameworkElement window, bool isNeedUpdateUI = true)
@@ -435,7 +435,7 @@ namespace _1712872
             //update UI
             if (isNeedUpdateUI)
                 UIAnimation(emptyPiece.picLeft, _defaultLeftSpace + emptyPiece.currentCol * _imgWidth, _defaultLeftSpace + (emptyPiece.currentCol - 1) * _imgWidth, true, window);
-       
+
         }
 
         private void moveUp(FrameworkElement window, bool isNeedUpdateUI = true)
@@ -468,7 +468,7 @@ namespace _1712872
             //update UI
             if (isNeedUpdateUI)
                 UIAnimation(emptyPiece.picDown, _defautTopSpace + emptyPiece.currentRow * _imgHeight, _defautTopSpace + (emptyPiece.currentRow + 1) * _imgHeight, false, window);
-           
+
         }
 
         private void moveDown(FrameworkElement window, bool isNeedUpdateUI = true)
@@ -502,7 +502,7 @@ namespace _1712872
             //update UI
             if (isNeedUpdateUI)
                 UIAnimation(emptyPiece.picUp, _defautTopSpace + emptyPiece.currentRow * _imgHeight, _defautTopSpace + (emptyPiece.currentRow - 1) * _imgHeight, false, window);
-         
+
         }
         // end moving
 
@@ -777,7 +777,7 @@ namespace _1712872
                         gameModel.model[j, k] = Int32.Parse(modelTokens[k]);
                     }
                     i++;
-                } 
+                }
             }
 
             return mode;
@@ -918,7 +918,7 @@ namespace _1712872
 
         private void pauseBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(!isGameRun)
+            if (!isGameRun)
             {
                 return;
             }
@@ -992,7 +992,7 @@ namespace _1712872
             isGameRun = true;
             loadGame = false;
             UI_GameManagerComunicate.start(this, Rows, Cols, true);
-            
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
