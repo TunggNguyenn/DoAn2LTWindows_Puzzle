@@ -120,12 +120,12 @@ namespace _1712872
         //------------------------ VARIABLE AREA --------------------------
         public  int _cols;
         public  int _rows;
-        public  int _previewImgHeight = 200;
-        public  int _previewImgWidth = 200;
-        private int _imgHeight = 60;
-        private int _imgWidth = 60;
-        private int _defautTopSpace = 30;
-        private int _defaultLeftSpace = 30;
+        public  int _previewImgHeight = 229;
+        public  int _previewImgWidth = 317;
+        private int _imgHeight = 100;
+        private int _imgWidth = 100;
+        private int _defautTopSpace = 50;
+        private int _defaultLeftSpace = 50;
         private  int _clock;
         private  int _timeDelay = 60 * 10; // 10 minutes for 1 gamestatic 
 
@@ -250,7 +250,6 @@ namespace _1712872
             {
                 if (!setupListImg())
                 {
-                    MessageBox.Show("Game setup fail because you don't choose a pic :(( , i hate you, we broke up");
                     return;
                 }
                 emptyPiece.setupCube();
@@ -329,6 +328,9 @@ namespace _1712872
             timeDis.Append(_clock / 60);
             timeDis.Append(" : ");
             timeDis.Append(_clock % 60);
+
+            checkGameStatus();
+
             recentTime = timeDis.ToString();
             UI_GameManagerComunicate.onEverySecond(recentTime);
         }
@@ -641,6 +643,9 @@ namespace _1712872
         {
             int picID = getPicIDFromCoordinateMouse((int)startMousePos.X, (int)startMousePos.Y);
 
+            if (picID == -1 || picID == _rows * _cols - 1)
+                return;
+
             Canvas.SetLeft(imgList[picID], lastMousePos.X - 75);
             Canvas.SetTop(imgList[picID], lastMousePos.Y - 75);
         }
@@ -651,7 +656,15 @@ namespace _1712872
             int originCol = getColFromCoordinateMouse((int)startMousePos.X);
             int originRow = getRowFromCoordinateMouse((int)startMousePos.Y);
 
+            if (originCol < 0 || originCol >= _cols || originRow < 0 || originRow >= _rows)
+                return;
+
             int picID = gameModel.model[originRow, originCol];
+
+            if (picID == -1 || picID == _rows * _cols - 1)
+                return;
+
+            
 
             int colIndex = getColFromCoordinateMouse((int)lastMousePos.X);
             int rowIndex = getRowFromCoordinateMouse((int)lastMousePos.Y);
@@ -693,6 +706,11 @@ namespace _1712872
 
         private void saveGame(string modeName)
         {
+            if(_imageURL==null)
+            {
+                MessageBox.Show("Game not played yet!");
+                return;
+            }
             _timeCounter.Stop();
             SaveWindow saveWindow = new SaveWindow();
             saveWindow.ShowDialog();
@@ -823,10 +841,10 @@ namespace _1712872
 
         private int Rows = 3;
         private int Cols = 3;
-        private int StartX = 30;
-        private int StartY = 30;
-        private int Width = 60;
-        private int Height = 60;
+        private int StartX = 50;
+        private int StartY = 50;
+        private int Width = 100;
+        private int Height = 100;
         private string modeName = "3x3";
         bool loadGame = false;
 
@@ -838,7 +856,7 @@ namespace _1712872
             gameManager.setupDelegate();
             UI_GameManagerComunicate.onEverySecond = ticTac;
             UI_GameManagerComunicate.lockScreen = screenControl;
-            //activeLinkImg();
+            
         }
 
         private void activeLinkImg()
@@ -958,7 +976,7 @@ namespace _1712872
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            //UI_GameManagerComunicate.save(modeCombx.SelectedItem.ToString());
+       
             UI_GameManagerComunicate.save(modeName);
         }
 
@@ -1089,6 +1107,7 @@ namespace _1712872
                 gameScreen.Children.Clear();
                 DrawingLine();
             }
+            //UI_GameManagerComunicate.start(this, Rows, Cols);
         }
 
         private void clearRegisterName()
@@ -1100,7 +1119,6 @@ namespace _1712872
                 StringBuilder imgName = new StringBuilder();
                 imgName.Append(str.ToString());
                 imgName.Append(i + 1);
-
                 gameScreen.UnregisterName(imgName.ToString());
             }
 

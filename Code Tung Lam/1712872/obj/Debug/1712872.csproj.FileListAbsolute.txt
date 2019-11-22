@@ -47,3 +47,20 @@ C:\Users\Tung Nguyen\OneDrive\Desktop\DoAn2LTWindows_Puzzle-master (1)\Code Tung
 C:\Users\Tung Nguyen\OneDrive\Desktop\DoAn2LTWindows_Puzzle-master (1)\Code Tung Lam\1712872\obj\Debug\1712872.csproj.GenerateResource.cache
 C:\Users\Tung Nguyen\OneDrive\Desktop\DoAn2LTWindows_Puzzle-master (1)\Code Tung Lam\1712872\obj\Debug\1712872.exe
 C:\Users\Tung Nguyen\OneDrive\Desktop\DoAn2LTWindows_Puzzle-master (1)\Code Tung Lam\1712872\obj\Debug\1712872.pdb
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\bin\Debug\1712872.exe.config
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\bin\Debug\1712872.exe
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\bin\Debug\1712872.pdb
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872.csprojAssemblyReference.cache
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\MainWindow.g.cs
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\SaveWindow.g.cs
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\App.g.cs
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872_MarkupCompile.cache
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872_MarkupCompile.lref
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\MainWindow.baml
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\SaveWindow.baml
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872.g.resources
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\_1712872.Properties.Resources.resources
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872.csproj.GenerateResource.cache
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872.csproj.CoreCompileInputs.cache
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872.exe
+C:\Users\PV\Desktop\111\DoAn2LTWindows_Puzzle-master\Code Tung Lam\1712872\obj\Debug\1712872.pdb

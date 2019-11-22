@@ -13,25 +13,28 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <Canvas x:Name="GameMenu" Background="Gray" Grid.Column="1">
-            <Image x:Name="picTemplate" Height="200" Width="200" Canvas.Left="111" Canvas.Top="32"/>
-            <Button x:Name="startGameBtn" Height="26" Width="80"  Content="Start" Click="startGameBtn_Click" Canvas.Top="386" Canvas.Left="46"/>
-            <Button x:Name="Exitbtn" Height="25" Width="80"  Content="Exit !" Click="Exitbtn_Click"  Canvas.Left="166" Canvas.Top="443"/>
-            <Button x:Name="pauseBtn" Height="26" Width="80" Content="Pause" Click="pauseBtn_Click" Canvas.Left="86" Canvas.Top="269"/>
-            <Button x:Name="continueBtn" Height="26" Width="80" IsEnabled="False" Click="continueBtn_Click" Content="Continue"  Canvas.Left="226" Canvas.Top="269"/>
-            <Button x:Name="SaveButton" Height="26" Width="80" Click="SaveButton_Click" Content="Save"  Canvas.Left="166" Canvas.Top="386"/>
-            <Button x:Name="LoadButton" Height="26" Width="80" Click="LoadButton_Click" Content="Load"  Canvas.Left="46" Canvas.Top="443"/>
-            <Label Name="timeLbl" FontWeight="Bold" Foreground="Red" VerticalContentAlignment="Bottom"  HorizontalContentAlignment="Center"  Content="Time" Canvas.Left="171" Canvas.Top="246" Width="50"/>
-            <TextBlock x:Name="timeDisplay" Width="50" Height="26" TextAlignment="Center" FontWeight="Bold" Canvas.Left="171" Canvas.Top="271"/>
+        <Canvas x:Name="GameMenu" Background="GreenYellow" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0.333,-0.333" Width="397">
+            <Image x:Name="picTemplate" Height="229" Width="317" Canvas.Left="46" Canvas.Top="64"/>
+            <Button Background="WhiteSmoke" x:Name="startGameBtn" Height="26" Width="80"  Content="Start" Click="startGameBtn_Click" Canvas.Top="390" Canvas.Left="46"/>
+            <Button  Background="WhiteSmoke" x:Name="Exitbtn" Height="25" Width="80"  Content="Exit" Click="Exitbtn_Click"  Canvas.Left="283" Canvas.Top="469"/>
+            <Button  Background="WhiteSmoke" x:Name="pauseBtn" Height="26" Width="80" Content="Pause" Click="pauseBtn_Click" Canvas.Left="166" Canvas.Top="390"/>
+            <Button Background="WhiteSmoke" x:Name="continueBtn" Height="26" Width="80" IsEnabled="False" Click="continueBtn_Click" Content="Continue"  Canvas.Left="283" Canvas.Top="390"/>
+            <Button Background="WhiteSmoke" x:Name="SaveButton" Height="26" Width="80" Click="SaveButton_Click" Content="Save"  Canvas.Left="46" Canvas.Top="469"/>
+            <Button Background="WhiteSmoke" x:Name="LoadButton" Height="26" Width="80" Click="LoadButton_Click" Content="Load"  Canvas.Left="166" Canvas.Top="469"/>
+            <Label FontSize="20" Name="timeLbl" FontWeight="Bold" Foreground="Red" VerticalContentAlignment="Bottom"  HorizontalContentAlignment="Center"  Content="TIME LEFT:" Canvas.Left="25" Canvas.Top="14" Width="111"/>
+            <TextBlock VerticalAlignment="Center" FontSize="20" x:Name="timeDisplay" Width="100" Height="37" TextAlignment="Center" FontWeight="Bold" Canvas.Left="166" Canvas.Top="14"/>
 
-            <Label Name="modeLbl" Content="Mode: " Foreground="Red" FontWeight="Bold" Canvas.Top="350" Canvas.Left="90" Height="26" Width="50"/>
-            <ComboBox Name="modeCombx" SelectionChanged="modeCombx_SelectionChanged" Canvas.Top="350" Canvas.Left="146" Height="26" Width="50">
-                <ComboBoxItem Name="mode1" Content="3x3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  IsSelected="True"/>
-                <ComboBoxItem Name="mode2" Content="4x4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
-                <ComboBoxItem Name="mode3" Content="5x5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label FontSize="20" Name="modeLbl" Content="DIFFICULTY:" Foreground="Red" FontWeight="Bold" Canvas.Top="311" Canvas.Left="71" Height="36" Width="130" RenderTransformOrigin="-0.244,-0.094"/>
+            <ComboBox Focusable="False" Name="modeCombx" SelectionChanged="modeCombx_SelectionChanged" Canvas.Top="311" Canvas.Left="201" Height="36" Width="130" Padding="10" FontWeight="Bold">
+                <ComboBoxItem Name="mode1" Content="Elmentary" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  IsSelected="True"/>
+                <ComboBoxItem Name="mode2" Content="Intermediate" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  />
+                <ComboBoxItem Name="mode3" Content="Advanced" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             </ComboBox>
+            <TextBlock TextAlignment="Center"  FontWeight="Bold" FontSize="14" Text="All rights reserved by 1712867-1712872-1712867" Canvas.Left="10" Canvas.Top="573" Height="22" Width="377">
+
+            </TextBlock>
         </Canvas>
-        <Canvas x:Name="gameScreen" Background="LightBlue" MouseMove="gameScreen_MouseMove" MouseLeftButtonDown="gameScreen_MouseLeftButtonDown" MouseLeftButtonUp="gameScreen_MouseLeftButtonUp" Grid.Column="0">
+        <Canvas x:Name="gameScreen" Background="WhiteSmoke" MouseMove="gameScreen_MouseMove" MouseLeftButtonDown="gameScreen_MouseLeftButtonDown" MouseLeftButtonUp="gameScreen_MouseLeftButtonUp" Grid.Column="0">
 
         </Canvas>
     </Grid>
