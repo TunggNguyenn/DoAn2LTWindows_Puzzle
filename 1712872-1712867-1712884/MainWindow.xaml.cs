@@ -32,6 +32,7 @@ namespace _1712872
         MOVE_UP,
         MOVE_DOWN
     }
+
     public class UI_GameManagerComunicate
     {
         public delegate void ConnectImageSource(Image target, bool isReviewPic);
@@ -76,6 +77,7 @@ namespace _1712872
         public int picDown;
         public int currentRow;
         public int currentCol;
+
 
         public void setupCube()
         {
