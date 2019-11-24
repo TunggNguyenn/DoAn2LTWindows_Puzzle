@@ -986,6 +986,10 @@ namespace _1712872
             clearRegisterName();
             int mode = UI_GameManagerComunicate.load();
             this.Rows = this.Cols = mode;
+            if(mode==0)
+            {
+                return;
+            }
             if (mode == 3)
             {
                 modeName = "3x3";
@@ -1123,6 +1127,37 @@ namespace _1712872
             }
 
             UI_GameManagerComunicate.remove();
+        }
+
+        private void LeftButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isGameRun)
+            {
+                UI_GameManagerComunicate.controlMove(this, GAME_MOVE.MOVE_RIGHT);
+            }
+        }
+        private void UpButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isGameRun)
+            {
+                UI_GameManagerComunicate.controlMove(this, GAME_MOVE.MOVE_DOWN);
+            }
+        }
+
+        private void RightButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isGameRun)
+            {
+                UI_GameManagerComunicate.controlMove(this, GAME_MOVE.MOVE_LEFT);
+            }
+        }
+
+        private void DownButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isGameRun)
+            {
+                UI_GameManagerComunicate.controlMove(this, GAME_MOVE.MOVE_UP);
+            }
         }
     }
 }
